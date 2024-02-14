@@ -40,11 +40,11 @@ def load_data(file: str):
             # Normalize pixel values to be in the range [0,1]
             img = img / 255.0
 
-            images.append(tf.constant(img))    
+            images.append(img)    
             if indices.__contains__(index):
-                labels.append(tf.constant(1.0))
+                labels.append(1.0)
             else:
-                labels.append(tf.constant(0.0))
+                labels.append(0.0)
 
-    return labels, images
+    return np.array(labels), np.array(images)
     
